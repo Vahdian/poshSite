@@ -1,0 +1,48 @@
+.mainTable{
+    display: flex;
+}
+
+
+
+.box{
+   margin: 10px;
+    align-content: center;
+    background-color: rgb(22, 22, 22);
+    border-radius: 20px;
+    padding: 40px;
+    
+}
+
+
+.button{
+    padding: 20px;
+    border: 1px, solid, rgb(255, 255, 255);
+    border-radius: 20px;
+    height: 60px;
+    width: 90px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    justify-content: center;
+}
+
+.bolt{
+    color: rgb(36, 36, 36);
+    background-color: rgb(173, 175, 41)
+}
+
+.water{
+color: rgb(37, 37, 37);
+background-color: rgb(88, 153, 206);
+}
+
+.gas{
+    color: rgb(37, 37, 37);
+    background-color: rgb(52, 192, 71);
+    }
+
+    .house{
+        color: rgb(37, 37, 37);
+        background-color: rgb(218, 79, 98);
+        }
