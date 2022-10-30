@@ -46,7 +46,7 @@ export default function MainPage() {
 
   return (
     <>
-      <div>
+      <div className="myScreen">
         <select
           value={selectedUser}
           onChange={handleChange}
@@ -132,8 +132,8 @@ export default function MainPage() {
         </div>
       </div>
       <h1 className="total">
-        TOTAL:
-        {selectedUser ? individualCosts(selectedUser).total : totalMonth()}
+        TOTAL:{" "}
+        {selectedUser ? individualCosts(selectedUser).total : totalMonth()}€
       </h1>
     </>
   );
