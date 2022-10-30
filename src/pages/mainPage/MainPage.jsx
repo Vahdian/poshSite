@@ -7,17 +7,21 @@ import {
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 import "./MainPage.css";
-import { dataUser } from "../../utils/dataMock.js";
-import { consumptionPercentages } from "../../utils/calculationsMainPage";
+import { allUsers, dataUser } from "../../utils/dataMock.js";
+import {
+  consumptionPercentages,
+  individualCosts,
+  totalMonth,
+  userRent,
+} from "../../utils/calculationsMainPage";
 
 export default function MainPage() {
   const [electricity, setElectricity] = useState(true);
   const [gas, setGas] = useState(true);
   const [water, setWater] = useState(true);
   const [rent, setRent] = useState(true);
-
-  const data = dataUser;
-  console.log(dataUser);
+  const [selectedUser, setSelectedUser] = useState("");
+  const [percentagesUser, setPercentagesUser] = useState({});
 
   const showElectricity = () => {
     setElectricity(!electricity);
@@ -35,77 +39,97 @@ export default function MainPage() {
     setRent(!rent);
   };
 
+  const handleChange = (e) => {
+    setSelectedUser(e.target.value);
+    setPercentagesUser(consumptionPercentages(selectedUser));
+  };
+
   return (
     <>
+      <div>
+        <select value={selectedUser} onChange={handleChange}>
+          {allUsers.map((users) => (
+            <option key={users.value} value={users.value}>
+              {users.text}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className="mainTable">
         <div className="box">
           <div>
-            {electricity ? (
-              <FontAwesomeIcon
-                icon={faBolt}
-                className="button"
-                onClick={showElectricity}
-              />
-            ) : (
-              <div className="button">
-                <FontAwesomeIcon icon={faBolt} />
-                <div onClick={showElectricity}>{data.electricity}€</div>
-              </div>
-            )}
+            <FontAwesomeIcon icon={faBolt} className="button" />
           </div>
           <div>
-            {gas ? (
-              <FontAwesomeIcon
-                icon={faGasPump}
-                className="button"
-                onClick={showGas}
-              />
-            ) : (
-              <div className="button">
-                <FontAwesomeIcon icon={faGasPump} />
-                <div onClick={showGas}>{data.gas}€</div>
-              </div>
-            )}
+            <FontAwesomeIcon icon={faGasPump} className="button" />
           </div>
           <div>
-            {water ? (
-              <FontAwesomeIcon
-                icon={faDroplet}
-                className="button"
-                onClick={showWater}
-              />
-            ) : (
-              <div className="button">
-                <FontAwesomeIcon icon={faDroplet} />
-                <div onClick={showWater}>{data.water}€</div>
-              </div>
-            )}
+            <FontAwesomeIcon icon={faDroplet} className="button" />
           </div>
           <div>
-            {rent ? (
-              <FontAwesomeIcon
-                icon={faHouse}
-                className="button"
-                onClick={showRent}
-              />
-            ) : (
-              <div className="button">
-                <FontAwesomeIcon icon={faHouse} />
-                <div onClick={showRent}>{data.rent}€</div>
-              </div>
-            )}
+            <FontAwesomeIcon icon={faHouse} className="button" />
           </div>
         </div>
         <div className="box">
-          <div className="button">
-            {consumptionPercentages.percentageElectricity}%
-          </div>
-          <div className="button">{consumptionPercentages.percentageGas}%</div>
-          <div className="button">
-            {consumptionPercentages.percentageWater}%
-          </div>
-          <div className="button">{consumptionPercentages.percentageRent}%</div>
+          {electricity ? (
+            <div className="button">
+              <div onClick={showElectricity}>
+                {selectedUser
+                  ? individualCosts(selectedUser).electricity
+                  : dataUser.electricity}
+                €
+              </div>
+            </div>
+          ) : (
+            <div className="button" onClick={showElectricity}>
+              {percentagesUser.percentageElectricity}%
+            </div>
+          )}
+
+          {gas ? (
+            <div className="button">
+              <div onClick={showGas}>
+                {selectedUser
+                  ? individualCosts(selectedUser).gas
+                  : dataUser.gas}
+                €
+              </div>
+            </div>
+          ) : (
+            <div className="button" onClick={showGas}>
+              {percentagesUser.percentageGas}%
+            </div>
+          )}
+          {water ? (
+            <div className="button">
+              <div onClick={showWater}>
+                {selectedUser
+                  ? individualCosts(selectedUser).water
+                  : dataUser.water}
+                €
+              </div>
+            </div>
+          ) : (
+            <div className="button" onClick={showWater}>
+              {percentagesUser.percentageWater}%
+            </div>
+          )}
+          {rent ? (
+            <div className="button">
+              <div onClick={showRent}>
+                {selectedUser ? userRent(selectedUser) : dataUser.totalRent}€
+              </div>
+            </div>
+          ) : (
+            <div className="button" onClick={showRent}>
+              {percentagesUser.percentageRent}%
+            </div>
+          )}
         </div>
+      </div>
+      <div>
+        TOTAL:{" "}
+        {selectedUser ? individualCosts(selectedUser).total : totalMonth()}
       </div>
     </>
   );
