@@ -47,7 +47,11 @@ export default function MainPage() {
   return (
     <>
       <div>
-        <select value={selectedUser} onChange={handleChange}>
+        <select
+          value={selectedUser}
+          onChange={handleChange}
+          className="mySelect"
+        >
           {allUsers.map((users) => (
             <option key={users.value} value={users.value}>
               {users.text}
@@ -127,10 +131,10 @@ export default function MainPage() {
           )}
         </div>
       </div>
-      <div>
-        TOTAL:{" "}
+      <h1 className="total">
+        TOTAL:
         {selectedUser ? individualCosts(selectedUser).total : totalMonth()}
-      </div>
+      </h1>
     </>
   );
 }

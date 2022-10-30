@@ -2,6 +2,15 @@
     display: flex;
 }
 
+.mySelect{
+    width: 200px;
+    padding: 10px;
+}
+
+.total{
+    font-size: large;
+}
+
 
 
 .box{
@@ -18,9 +27,9 @@
     padding: 20px;
     border: 1px, solid, rgb(255, 255, 255);
     border-radius: 20px;
-    height: 60px;
-    width: 90px;
-    margin: 5px;
+    height: 40px;
+    width: 40px;
+    margin: 2px;
     display: flex;
     align-items: center;
     font-weight: 600;
