@@ -60,7 +60,7 @@ export default function MainPage() {
         </select>
       </div>
       <div className="mainTable">
-        <div className="box">
+        <div className="box1">
           <div>
             <FontAwesomeIcon icon={faBolt} className="button" />
           </div>
@@ -74,7 +74,7 @@ export default function MainPage() {
             <FontAwesomeIcon icon={faHouse} className="button" />
           </div>
         </div>
-        <div className="box">
+        <div className="box2">
           {electricity ? (
             <div className="button">
               <div onClick={showElectricity}>
