@@ -1,6 +1,7 @@
 .myScreen{
     width: 100vw;
     height: 50vw;
+    overflow: hidden;
 }
 
 
@@ -9,13 +10,13 @@
 }
 
 .mySelect{
-    width: 90vw;
+    width: 70vw;
     padding: 10px;
-    margin-bottom: 40px;
     text-align: center;
 }
 
 .total{
+    margin-top: 20px;
     font-size: 30px;
 }
 
@@ -26,7 +27,7 @@
     align-content: center;
     background-color: rgb(22, 22, 22);
     border-top-left-radius: 20px;
-    padding: 40px;
+    padding: 20px;
     margin: 0;
     
 }
@@ -36,7 +37,7 @@
      align-content: center;
      background-color: rgb(22, 22, 22);
      border-radius: 0px;
-     padding: 40px;
+     padding: 20px;
      margin: 0;
      border-bottom-right-radius: 20px ;
      
