@@ -1,7 +1,9 @@
-.myScreen{
-    width: 100vw;
-    height: 50vw;
-    overflow: hidden;
+.iconHistory{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
 }
 
 
@@ -16,8 +18,9 @@
 }
 
 .total{
-    margin-top: 20px;
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px;
 }
 
 
@@ -25,7 +28,8 @@
 .box1{
    margin: 10px;
     align-content: center;
-    background-color: rgb(22, 22, 22);
+    background: rgb(21,0,36);
+    background: linear-gradient(180deg, rgb(101, 71, 123) 13%, rgb(58, 40, 112) 55%, rgb(14, 0, 14) 100%); 
     border-top-left-radius: 20px;
     padding: 20px;
     margin: 0;
@@ -35,7 +39,8 @@
 .box2{
     margin: 10px;
      align-content: center;
-     background-color: rgb(22, 22, 22);
+     background: rgb(21,0,36);
+     background: linear-gradient(180deg, rgb(33, 17, 44) 13%, rgb(58, 40, 112) 55%, rgb(79, 60, 79) 100%); 
      border-radius: 0px;
      padding: 20px;
      margin: 0;

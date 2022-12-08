@@ -1,34 +1,25 @@
-import { dataUser } from "./dataMock"
 
-export const totalExpenditure = (selectedUser)=>  {
-    const totalNoRent = dataUser.water + dataUser.electricity + dataUser.gas;
-    switch (selectedUser) {
-        case "Ger":
-            return totalNoRent +dataUser.specificToUser.find(user => user.user === "Ger").rent
-        case "Kiki":
-            return totalNoRent + dataUser.specificToUser.find(user => user.user === "Kiki").rent
-        case "Kaka":
-            return totalNoRent + dataUser.specificToUser.find(user => user.user === "Kaka").rent
-        default:
-            return totalNoRent + dataUser.totalRent
-    }
 
+export const totalMonth = (expenses, userType) =>{
+    return individualCost(expenses.electricity) + individualCost(expenses.gas) + userRent(userType) + individualCost(expenses.water)
 }
 
-export const totalMonth = () =>{
-    return dataUser.electricity + dataUser.gas + dataUser.totalRent + dataUser.water
+export const totalExpenses = (expenses) =>{
+    return individualCost(expenses.electricity) + individualCost(expenses.gas) + individualCost(expenses.water)
 }
 
-export const userRent = (selectedUser)=>  {
-    switch (selectedUser) {
-        case "Ger":
-            return dataUser.specificToUser.find(user => user.user === "Ger").rent
-        case "Kiki":
-            return dataUser.specificToUser.find(user => user.user === "Kiki").rent
-        case "Kaka":
-            return dataUser.specificToUser.find(user => user.user === "Kaka").rent
+export const userRent = (userType)=>  {
+    switch (userType) {
+        case 1:
+            return 370
+        case 2:
+            return 340
+        case 3:
+            return 290
+        case 4:
+            return 500
         default:
-            return dataUser.totalRent
+            return 1000
     }
 
 }
@@ -47,26 +38,18 @@ export const numberOfTenants = () => {
     return 3
 }
 
-export const individualCosts = (selectedUser) => {
-    const water = roundNumberToTwo(dataUser.water / numberOfTenants(), 2)
-    const rent = roundNumberToTwo(userRent(selectedUser),2)
-    const gas = roundNumberToTwo(dataUser.gas / numberOfTenants(),2)
-    const electricity = roundNumberToTwo((dataUser.electricity) / numberOfTenants(),2)
-    return {"water": water, 
-            "rent": rent, 
-            "gas": gas, 
-            "electricity": electricity,
-            "total": water + rent + gas + electricity
-        }
+export const individualCost = (total) => {
+    return roundNumberToTwo(total/numberOfTenants(), 2)
 }
    
-export const consumptionPercentages= (selectedUser) => {
-    const currentRent = userRent(selectedUser)
-    const percentageWater = roundNumberToTwo((dataUser.water / totalExpenditure(selectedUser))*100, 2)
-    const percentageRent =  roundNumberToTwo((currentRent / totalExpenditure(selectedUser))*100, 2)
-    const percentageGas =  roundNumberToTwo((dataUser.gas / totalExpenditure(selectedUser))*100, 2)
-    const percentageElectricity =  roundNumberToTwo((dataUser.electricity / totalExpenditure(selectedUser))*100, 2)
-    const totalPercentages = {percentageElectricity, percentageGas, percentageWater, percentageRent}
-    return totalPercentages
+export const consumptionPercentages= (selectedUser, expenses, expense) => {
+    const userType = selectedUser.tenantType
+    if(expense === "rent"){
+        const percentage = roundNumberToTwo((userRent(userType))/totalMonth(expenses, userType)*100, 2) 
+        return percentage
+    } else {
+        const percentage = roundNumberToTwo((individualCost(expenses[expense]))/totalMonth(expenses, userType)*100, 2)
+        return percentage
+    }
 }
 

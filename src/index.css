@@ -5,10 +5,47 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(75, 75, 75);
+  background: rgb(25,103,108);
+  background: linear-gradient(180deg, rgba(25,103,108,1) 13%, rgba(0,32,30,1) 100%); 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container{
+  max-width: 80%;
+  padding: 2rem;
+}
+
+.resultContainer{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  max-width: 70%;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 1px;
+  margin-top: 1rem;
+  background: rgb(25,103,108);
+  background: linear-gradient(180deg, rgb(26, 66, 69) 13%, rgba(0,32,30,1) 100%);
+  
+}
+
+.date{
+  font-size: 14px;
+}
+
+.smolText{
+  font-size: 14px;
+}
+
+.warning{
+  color: rgba(211, 203, 42, 0.743);
+}
+
+.hover{
+  cursor: pointer;
 }

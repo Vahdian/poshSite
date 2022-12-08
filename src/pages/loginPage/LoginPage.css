@@ -1,0 +1,21 @@
+.landingPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputField{
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.logInButton{
+    margin-top: 10px;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+}
