@@ -48,7 +48,9 @@ export default function MainPage() {
       .then((res) => res.json())
       .then((data) => setSelectedUser(data));
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => fetchUser(), []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => fetchExpense(), []);
 
   const newExpense = () => {

@@ -17,7 +17,6 @@ export default function BillsCard({ expenses, selectedUser }) {
   const [gas, setGas] = useState(true);
   const [water, setWater] = useState(true);
   const [rent, setRent] = useState(true);
-  const [percentagesUser, setPercentagesUser] = useState({});
 
   const showElectricity = () => {
     setElectricity(!electricity);

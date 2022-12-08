@@ -7,11 +7,7 @@ export default function NewMonthlyExpense() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [data, setData] = useState({});
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (formData) => {
     setData(formData);
     sendData(data);
