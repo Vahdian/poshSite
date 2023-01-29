@@ -1,0 +1,68 @@
+.card1, .card2, .card3, .card4, .photography1, .card, .cardcode1, .cardcode2, .cardcode3, .cardmusic{
+background-position: center;
+background-size:cover;
+width: 360px;
+height: 360px;
+}
+
+.card{
+    border: 1px, solid, black;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.card1{
+    background-image: url("../../assets/coding3.jpg");
+}
+
+.card2{
+    background-image: url("../../assets/art2.jpg");
+    
+}
+
+.card3{
+    background-image: url("../../assets/music.jpg");
+}
+
+.card4{
+    background-image: url("../../assets/photo.JPG");
+}
+
+
+.photography1{
+    background-image: url("../../assets/photo2.JPG");
+}
+
+.cardcode1{
+    background-image: url("../../assets/cards/design.png");
+}
+
+.cardcode2{
+    background-image: url("../../assets/cards/webmob3.png");
+}
+
+.cardcode3{
+    background-image: url("../../assets/cards/webs.png");
+}
+
+.cardmusic{
+    background-image: url("../../assets/cards/heart.png");
+    animation: beat 2s infinite alternate;
+	transform-origin: center;
+}
+
+#instagram:hover, #linkedin:hover, #cv:hover {
+    animation: beat-big 1s infinite alternate;
+	transform-origin: center;
+}
+
+
+@keyframes beat{
+	to { transform: scale(1.1); }
+}
+
+@keyframes beat-big{
+	to { transform: scale(1.5); }
+}

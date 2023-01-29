@@ -1,13 +1,12 @@
 import './App.css';
 import Routing from './routes/Routes';
+// import Navbar from './shared/navBar/NavBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
       <Routing/>
-      </header>
-    </div>
+    </>
   );
 }
 
