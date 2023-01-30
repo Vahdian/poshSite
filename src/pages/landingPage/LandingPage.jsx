@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import "./landingPage.css";
 import "animate.css";
-import Instagram from "../../assets/instagram.svg";
-import LinkedIn from "../../assets/linkedin.svg";
 import Spotify from "../../assets/spotify.svg";
 import Soundcloud from "../../assets/soundcloud.svg";
 import Youtube from "../../assets/youtube.svg";
 import back from "../../assets/back.png";
 
-import CV from "../../assets/cv.png";
 import { Link } from "react-router-dom";
+import Socials from "../../components/socialsComponent/Socials";
+import AboutComponent from "../../components/aboutComponent/AboutComponent";
 
 export default function LandingPage() {
   const [photographySelected, setPhotographySelected] = useState(false);
@@ -101,12 +100,14 @@ export default function LandingPage() {
             </div>
           )}
           {codeSelected && (
-            <div className="card1 w-1/2 h-1/2 flex justify-center items-end text-white text-xl">
-              {codeSelected && <div className="text-9xl">CODE</div>}
+            <div className="card bg-yellow-500 w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
+              <div className="text-7xl">I</div>
             </div>
           )}
           {codeSelected && (
-            <div className="cardcode1 w-1/2 h-1/2 flex justify-center items-end text-white text-xl"></div>
+            <div className="card bg-blue-500 w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
+              <div className="text-7xl">CODE</div>
+            </div>
           )}
           {nothingSelected && (
             <div
@@ -134,7 +135,9 @@ export default function LandingPage() {
             </div>
           )}
           {codeSelected && (
-            <div className="cardcode2 w-1/2 h-1/2 flex justify-center items-end text-white text-xl"></div>
+            <div className="card bg-green-500 w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
+              <div className="text-7xl">IN</div>
+            </div>
           )}
           {nothingSelected && (
             <div
@@ -192,7 +195,10 @@ export default function LandingPage() {
           )}
 
           {codeSelected && (
-            <div className="cardcode3 w-1/2 h-1/2 flex justify-center items-end text-white text-xl"></div>
+            <div className="bg-pink-500 card w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
+              {" "}
+              <div className="text-7xl">REACT</div>
+            </div>
           )}
           {nothingSelected && (
             <Link to="/media">
@@ -221,35 +227,8 @@ export default function LandingPage() {
             </div>
           )}
         </div>
-        <div className="absolute left-0 text-black m-6 cursor-pointer">
-          <a
-            href="https://www.instagram.com/soulofkumami"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={Instagram} alt="" className="h-6 mb-4" id="instagram" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/germanpalero/"
-            target="_blank"
-            rel="noopener noreferrer"
-            id="linkedin"
-          >
-            <img src={LinkedIn} alt="" className="h-6 mb-4" id="linkedin" />
-          </a>
-          <a
-            href="https://www.mycv.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={CV} alt="" className="h-6 mb-4" id="cv" />
-          </a>
-        </div>
-        <div className="absolute right-0 text-black m-6">
-          <div className="rotate-[270deg] clickable" id="about">
-            ABOUT ME
-          </div>
-        </div>
+        <Socials />
+        <AboutComponent />
       </div>
     </>
   );

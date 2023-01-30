@@ -1,14 +1,14 @@
-import React from 'react'
-import Gallery from './galleryComponent/Gallery'
-import back from "../../assets/back.png";
+import React from "react";
+import Gallery from "./galleryComponent/Gallery";
+import AboutComponent from "../../components/aboutComponent/AboutComponent";
+import BackButton from "../../components/backButton/BackButton";
 
 export default function Media() {
   return (
-    <div> <div
-    className="absolute top-0 left-0 ml-2 mt-2 text-4xl clickable"
-  >
-    <img src={back} alt="" />
-  </div><Gallery/></div>
-  )
+    <div className="flex justify-center items-center">
+      <BackButton route={""}/>
+      <Gallery />
+      <AboutComponent />
+    </div>
+  );
 }
-

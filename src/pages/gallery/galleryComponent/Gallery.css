@@ -6,3 +6,10 @@
     object-fit: cover;
 }
 
+.gallery{
+    height: 732px;
+    width: 1104px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    
+}
