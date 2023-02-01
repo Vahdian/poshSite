@@ -1,0 +1,137 @@
+{
+  "imageCategories": [
+    {
+      "title": "PORTRAITS",
+      "link": "https://live.staticflickr.com/65535/52659432546_0790b631cd_h.jpg",
+      "key": 0,
+      "nav": "/media/portraits"
+    },
+    {
+      "title": "TRAVEL",
+      "link": "https://live.staticflickr.com/65535/52658852217_d545f94a46_k.jpg",
+      "key": 1,
+      "nav": "/media/travel"
+    },
+    {
+      "title": "B&W",
+      "link": "https://live.staticflickr.com/65535/52663669885_081ec07d98_k.jpg",
+      "key": 2,
+      "nav": "/media/bw"
+    }
+],
+"portraits": [
+    {
+      "title": "Anne",
+      "link": "https://live.staticflickr.com/65535/52659432546_0790b631cd_h.jpg",
+      "key": 0,
+      "nav": "/media/portraits"
+    },
+    {
+      "title": "Mariz",
+      "link": "https://live.staticflickr.com/65535/52663675045_0a99bfbadf_k.jpg",
+      "key": 1,
+      "nav": "/media/travel"
+    },
+    {
+        "title": "Ruth",
+        "link": "https://live.staticflickr.com/65535/52663753288_f271ac045a_k.jpg",
+        "key": 0,
+        "nav": "/media/portraits"
+      },
+    {
+      "title": "B&W",
+      "link": "https://live.staticflickr.com/65535/52663676015_d8c01c5401_k.jpg",
+      "key": 2,
+      "nav": "/media/bw"
+    },
+    {
+        "title": "B&W",
+        "link": "https://live.staticflickr.com/65535/52663763888_77197892cd_k.jpg",
+        "key": 2,
+        "nav": "/media/bw"
+      },
+      {
+        "title": "TRAVEL",
+        "link": "https://live.staticflickr.com/65535/52662759627_0417afb32f_k.jpg",
+        "key": 1,
+        "nav": "/media/travel"
+      }
+     
+  ],
+  "travel": [
+    {
+      "title": "PORTRAITS",
+      "link": "https://live.staticflickr.com/681/31870209830_ceb3e37fe5_k.jpg",
+      "key": 0,
+      "nav": "/media/portraits"
+    },
+    {
+      "title": "Scotland",
+      "link": "https://live.staticflickr.com/65535/52658852217_d545f94a46_k.jpg",
+      "key": 1,
+      "nav": "/media/travel"
+    },
+    {
+      "title": "Akihabara",
+      "link": "https://live.staticflickr.com/4273/34731811761_0ac338d463_k.jpg",
+      "key": 2,
+      "nav": "/media/bw"
+    },
+    {
+        "title": "Mont Blanc",
+        "link": "https://live.staticflickr.com/4251/34033146703_0a1c619b3a_k.jpg",
+        "key": 0,
+        "nav": "/media/portraits"
+      },
+      {
+        "title": "Scotland road",
+        "link": "https://live.staticflickr.com/65535/52659838883_cba5b70fc7_k.jpg",
+        "key": 1,
+        "nav": "/media/travel"
+      },
+      {
+        "title": "Boats Sunset",
+        "link": "https://live.staticflickr.com/462/31404714604_ea165d4051_k.jpg",
+        "key": 2,
+        "nav": "/media/bw"
+      }
+  ],
+  "byw": [
+    {
+      "title": "Satoshi in Kyoto",
+      "link": "https://live.staticflickr.com/65535/52662717107_2ab56210e4_k.jpg",
+      "key": 0,
+      "nav": "/media/portraits"
+    },
+    {
+      "title": "Friend from the road",
+      "link": "https://live.staticflickr.com/65535/52663718328_8707b2f10b_k.jpg",
+      "key": 1,
+      "nav": "/media/travel"
+    },
+    {
+      "title": "London Musician",
+      "link": "https://live.staticflickr.com/65535/52663669885_081ec07d98_k.jpg",
+      "key": 2,
+      "nav": "/media/bw"
+    },
+    {
+        "title": "Work from China",
+        "link": "https://live.staticflickr.com/65535/52663656680_9e4a332e27_k.jpg",
+        "key": 0,
+        "nav": "/media/portraits"
+      },
+      {
+        "title": "Nets in Cameroon",
+        "link": "https://live.staticflickr.com/65535/52662726822_c05ae00e80_k.jpg",
+        "key": 1,
+        "nav": "/media/travel"
+      },
+      {
+        "title": "Worried in Pekin",
+        "link": "https://live.staticflickr.com/65535/52663664410_58bb0a87aa_k.jpg",
+        "key": 2,
+        "nav": "/media/bw"
+      }
+  ]
+}

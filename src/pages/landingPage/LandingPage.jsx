@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from "react";
 import "./landingPage.css";
 import "animate.css";
@@ -9,6 +10,8 @@ import back from "../../assets/back.png";
 import { Link } from "react-router-dom";
 import Socials from "../../components/socialsComponent/Socials";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
+import ReactLogo from "../../components/reactLogo/ReactLogo";
+import { useEffect } from "react";
 
 export default function LandingPage() {
   const [photographySelected, setPhotographySelected] = useState(false);
@@ -20,6 +23,8 @@ export default function LandingPage() {
   const [codeTitle, setCodeTitle] = useState(false);
   const [artTitle, setArtTitle] = useState(false);
   const [mediaTitle, setMediaTitle] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
+  const [navigate, setNavigate] = useState(false);
 
   const resetStatus = () => {
     setNothingSelected(true);
@@ -28,23 +33,27 @@ export default function LandingPage() {
     setMusicSelected(false);
     setArtSelected(false);
     setPhotographySelected(false);
-    console.log("rest");
+    setNavigate(true);
   };
   const selectCode = () => {
     setCodeSelected(true);
     setNothingSelected(false);
+    setNavigate(true);
   };
   const selectArt = () => {
     setArtSelected(true);
     setNothingSelected(false);
+    setNavigate(true);
   };
   const selectPhoto = () => {
     setPhotographySelected(true);
     setNothingSelected(false);
+    setNavigate(true);
   };
   const selectMusic = () => {
     setMusicSelected(true);
     setNothingSelected(false);
+    setNavigate(true);
   };
 
   const showMusicTitle = (bool) => {
@@ -60,8 +69,19 @@ export default function LandingPage() {
   const showMediaTitle = (bool) => {
     setMediaTitle(bool);
   };
+
+  useEffect(() => {
+    setFadeIn(!fadeIn);
+  }, [nothingSelected]);
+
   return (
-    <>
+    <div
+      className={
+        fadeIn
+          ? "animate__animated animate__fadeInRight"
+          : "animate__animated animate__fadeInLeft"
+      }
+    >
       <div className="flex justify-center items-center h-screen flex-col">
         {!nothingSelected && (
           <div
@@ -73,12 +93,24 @@ export default function LandingPage() {
         )}
         <div className="mainPage  grid grid-cols-2 gap-3 font-bold">
           {musicSelected && (
-            <div className="w-1/2 h-1/2 flex bg-blue-500 card text-black justify-center items-center text-white text-9xl">
+            <div
+              className={
+                fadeIn
+                  ? "w-1/2 h-1/2 flex bg-blue-500 card text-black justify-center items-center text-white text-9xl animate__animated animate__fadeInRight "
+                  : "animate__animated animate__fadeInLeft w-1/2 h-1/2 flex bg-blue-500 card text-black justify-center items-center text-white text-9xl "
+              }
+            >
               I
             </div>
           )}
           {musicSelected && (
-            <div className="w-1/2 h-1/2 flex bg-orange-500 card text-black justify-center items-center text-white text-9xl">
+            <div
+              className={
+                fadeIn
+                  ? "w-1/2 h-1/2 flex bg-orange-500 card text-black justify-center items-center text-white text-9xl animate__animated animate__fadeInDownBig "
+                  : "animate__animated animate__fadeInDownBig w-1/2 h-1/2 flex bg-orange-500 card text-black justify-center items-center text-white text-9xl "
+              }
+            >
               FK*N
             </div>
           )}
@@ -100,12 +132,12 @@ export default function LandingPage() {
             </div>
           )}
           {codeSelected && (
-            <div className="card bg-yellow-500 w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
+            <div className="card bg-blue-500 w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
               <div className="text-7xl">I</div>
             </div>
           )}
           {codeSelected && (
-            <div className="card bg-blue-500 w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
+            <div className="card bg-orange-500 w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
               <div className="text-7xl">CODE</div>
             </div>
           )}
@@ -195,9 +227,11 @@ export default function LandingPage() {
           )}
 
           {codeSelected && (
-            <div className="bg-pink-500 card w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
-              {" "}
-              <div className="text-7xl">REACT</div>
+            <div className="relative bg-pink-500 card w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
+              <div className="absolute">
+                <ReactLogo />
+              </div>
+              <div className="text-7xl z-40 text-white-600">REACT</div>
             </div>
           )}
           {nothingSelected && (
@@ -228,8 +262,8 @@ export default function LandingPage() {
           )}
         </div>
         <Socials />
-        <AboutComponent />
+        <AboutComponent nav={navigate} />
       </div>
-    </>
+    </div>
   );
 }

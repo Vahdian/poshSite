@@ -9,7 +9,7 @@
 .gallery{
     height: 732px;
     width: 1104px;
-    overflow: scroll;
+    overflow: hidden;
     scroll-behavior: smooth;
     
 }
