@@ -202,7 +202,7 @@ export default function LandingPage() {
               MUSIC
               <div className="flex justify-around items-center mt-4 gap-3">
                 <a
-                  href="https://www.linkedin.com/in/germanpalero/"
+                  href="https://open.spotify.com/playlist/1VJ1uDG0JxZPwGyUSAZBrL?si=9mGFFiXyQiu8g7bW7LmQpQ"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
