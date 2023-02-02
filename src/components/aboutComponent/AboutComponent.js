@@ -4,9 +4,14 @@ import arrowforward from "../../assets/arrowforwardwhite.png";
 import "./AboutComponent.css";
 import "animate.css";
 import { useEffect } from "react";
+import stackIcons from "../../assets/stack/techStack";
 
 export default function AboutComponent({ nav }) {
   const [aboutMe, setAboutMe] = useState(false);
+
+  const icons = stackIcons;
+  console.log(icons);
+
   const extendAboutMe = () => {
     setAboutMe(true);
   };
@@ -60,12 +65,19 @@ export default function AboutComponent({ nav }) {
                 world for everyone.
               </p>
               <h1 className="mb-2">TECH STACK</h1>
-              <p className="text-xs w-80">
-                My name is German I am a web developer, photographer, musician
-                artist and adventurer from Madrid, Spain. I am fully commited
-                with projects about equality, inclusion and making a better
-                world for everyone.
-              </p>
+              <div className="flex justify-around items-center space-x-4">
+                {stackIcons.map((icon, i) => {
+                  return (
+                    <div key={i}>
+                      <img
+                        src={icon.route}
+                        alt={icon.tech}
+                        className="h-8 w-8"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </>

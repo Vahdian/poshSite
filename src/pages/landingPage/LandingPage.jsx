@@ -244,7 +244,7 @@ export default function LandingPage() {
               >
                 {mediaTitle && (
                   <div
-                    className="text-5xl text-center"
+                    className="text-4xl text-center"
                     onMouseOver={() => showMediaTitle(true)}
                   >
                     VIDEO & PHOTOGRAPHY
