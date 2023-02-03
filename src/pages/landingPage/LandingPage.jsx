@@ -10,7 +10,7 @@ import back from "../../assets/back.png";
 import { Link } from "react-router-dom";
 import Socials from "../../components/socialsComponent/Socials";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
-import ReactLogo from "../../components/reactLogo/ReactLogo";
+import ReactLogo from "../../components/reactLogoComponent/ReactLogo";
 import { useEffect } from "react";
 
 export default function LandingPage() {

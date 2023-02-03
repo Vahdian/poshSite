@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Gallery from "./galleryComponent/Gallery";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
-import BackButton from "../../components/backButton/BackButton";
+import BackButton from "../../components/backButtonComponent/BackButton";
 import "animate.css";
 
 export default function Media() {

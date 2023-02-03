@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ReactLogo from "../components/reactLogo/ReactLogo";
+import ReactLogo from "../components/reactLogoComponent/ReactLogo";
 import Media from "../pages/gallery/Media";
 //import Media from "../pages/gallery/Media";
 import ThreeCardsComponent from "../pages/gallery/threeCardsComponent/ThreeCardsComponent";
