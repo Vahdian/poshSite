@@ -3,10 +3,13 @@ import CV from "../../assets/cv.png";
 import Instagram from "../../assets/instagram.svg";
 import LinkedIn from "../../assets/linkedin.svg";
 import "../../pages/landingPage/landingPage.css";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export default function Socials() {
+  const width = useWindowSize();
   return (
-    <div className="absolute left-0 text-black m-6 cursor-pointer">
+    <div className="absolute sm:left-0 top-0 sm:top-auto space-x-8 sm:space-x-0 text-black mt-6 sm:mt-0 cursor-pointer flex sm:flex-col justify-center items-center sm:h-screen w-full sm:w-auto sm:ml-6">
+      {width < 900 && <div className="mb-4 text-sm">SOUL OF KUMAMI</div>}
       <a
         href="https://www.instagram.com/soulofkumami"
         target="_blank"
@@ -22,7 +25,11 @@ export default function Socials() {
       >
         <img src={LinkedIn} alt="" className="h-6 mb-4" id="linkedin" />
       </a>
-      <a href="https://www.mycv.com" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://www.germanpalerocv.netlify.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img src={CV} alt="" className="h-6 mb-4" id="cv" />
       </a>
     </div>

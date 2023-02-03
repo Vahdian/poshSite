@@ -5,10 +5,11 @@ import "./AboutComponent.css";
 import "animate.css";
 import { useEffect } from "react";
 import stackIcons from "../../assets/stack/techStack";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export default function AboutComponent({ nav }) {
   const [aboutMe, setAboutMe] = useState(false);
-
+  const width = useWindowSize();
   const icons = stackIcons;
   console.log(icons);
 
@@ -27,7 +28,7 @@ export default function AboutComponent({ nav }) {
 
   return (
     <>
-      {!aboutMe && (
+      {width > 900 && !aboutMe && (
         <div
           className="absolute right-0 text-black m-6 flex"
           onClick={extendAboutMe}

@@ -8,7 +8,6 @@ import Youtube from "../../assets/youtube.svg";
 import back from "../../assets/back.png";
 
 import { Link } from "react-router-dom";
-import Socials from "../../components/socialsComponent/Socials";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
 import ReactLogo from "../../components/reactLogoComponent/ReactLogo";
 import { useEffect } from "react";
@@ -82,7 +81,7 @@ export default function LandingPage() {
           : "animate__animated animate__fadeInLeft"
       }
     >
-      <div className="flex justify-center items-center h-screen flex-col">
+      <div className="flex justify-center items-center sm:h-screen flex-col mt-16 mb-16">
         {!nothingSelected && (
           <div
             className="absolute top-0 left-0 ml-2 mt-2 text-4xl clickable"
@@ -91,7 +90,7 @@ export default function LandingPage() {
             <img src={back} alt="" />
           </div>
         )}
-        <div className="mainPage  grid grid-cols-2 gap-3 font-bold">
+        <div className="mainPage  grid sm:grid-cols-2 gap-3 font-bold">
           {musicSelected && (
             <div
               className={
@@ -261,7 +260,6 @@ export default function LandingPage() {
             </div>
           )}
         </div>
-        <Socials />
         <AboutComponent nav={navigate} />
       </div>
     </div>
