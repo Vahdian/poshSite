@@ -11,8 +11,10 @@ import { Link } from "react-router-dom";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
 import ReactLogo from "../../components/reactLogoComponent/ReactLogo";
 import { useEffect } from "react";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export default function LandingPage() {
+  const width = useWindowSize();
   const [photographySelected, setPhotographySelected] = useState(false);
   const [codeSelected, setCodeSelected] = useState(false);
   const [artSelected, setArtSelected] = useState(false);
@@ -81,7 +83,7 @@ export default function LandingPage() {
           : "animate__animated animate__fadeInLeft"
       }
     >
-      <div className="flex justify-center items-center sm:h-screen flex-col mt-16 mb-16">
+      <div className="flex justify-center items-center sm:h-screen flex-col mt-16 mb-16 sm:mt-0 sm:mb-0">
         {!nothingSelected && (
           <div
             className="absolute top-0 left-0 ml-2 mt-2 text-4xl clickable"
@@ -120,14 +122,15 @@ export default function LandingPage() {
               onMouseOver={() => showCodeTitle(true)}
               onMouseOut={() => showCodeTitle(false)}
             >
-              {codeTitle && (
-                <div
-                  className="text-7xl"
-                  onMouseOver={() => showCodeTitle(true)}
-                >
-                  CODE
-                </div>
-              )}
+              {codeTitle ||
+                (width < 900 && (
+                  <div
+                    className="text-7xl"
+                    onMouseOver={() => showCodeTitle(true)}
+                  >
+                    CODE
+                  </div>
+                ))}
             </div>
           )}
           {codeSelected && (
@@ -147,14 +150,15 @@ export default function LandingPage() {
               onMouseOver={() => showArtTitle(true)}
               onMouseOut={() => showArtTitle(false)}
             >
-              {artTitle && (
-                <div
-                  className="text-7xl"
-                  onMouseOver={() => showArtTitle(true)}
-                >
-                  ART
-                </div>
-              )}
+              {artTitle ||
+                (width < 900 && (
+                  <div
+                    className="text-7xl"
+                    onMouseOver={() => showArtTitle(true)}
+                  >
+                    ART
+                  </div>
+                ))}
             </div>
           )}
           {artSelected && (
@@ -177,14 +181,15 @@ export default function LandingPage() {
               onMouseOver={() => showMusicTitle(true)}
               onMouseOut={() => showMusicTitle(false)}
             >
-              {musicTitle && (
-                <div
-                  className="text-7xl"
-                  onMouseOver={() => showMusicTitle(true)}
-                >
-                  MUSIC
-                </div>
-              )}
+              {musicTitle ||
+                (width < 900 && (
+                  <div
+                    className="text-7xl"
+                    onMouseOver={() => showMusicTitle(true)}
+                  >
+                    MUSIC
+                  </div>
+                ))}
             </div>
           )}
           {musicSelected && (
@@ -227,10 +232,16 @@ export default function LandingPage() {
 
           {codeSelected && (
             <div className="relative bg-pink-500 card w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
-              <div className="absolute">
-                <ReactLogo />
+              <div className="absolute clickable">
+                <a
+                  href="germanpalero.netlify.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ReactLogo />
+                </a>
               </div>
-              <div className="text-7xl z-40 text-white-600">REACT</div>
+              {/* <div className="text-3xl z-40 text-white-600">REACT</div> */}
             </div>
           )}
           {nothingSelected && (
@@ -241,14 +252,15 @@ export default function LandingPage() {
                 onMouseOver={() => showMediaTitle(true)}
                 onMouseOut={() => showMediaTitle(false)}
               >
-                {mediaTitle && (
-                  <div
-                    className="text-4xl text-center"
-                    onMouseOver={() => showMediaTitle(true)}
-                  >
-                    VIDEO & PHOTOGRAPHY
-                  </div>
-                )}
+                {mediaTitle ||
+                  (width < 900 && (
+                    <div
+                      className="text-4xl text-center"
+                      onMouseOver={() => showMediaTitle(true)}
+                    >
+                      VIDEO & PHOTOGRAPHY
+                    </div>
+                  ))}
               </div>
             </Link>
           )}
