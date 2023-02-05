@@ -3,6 +3,7 @@ import Gallery from "./galleryComponent/Gallery";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
 import BackButton from "../../components/backButtonComponent/BackButton";
 import "animate.css";
+import Socials from "../../components/socialsComponent/Socials";
 
 export default function Media() {
   const [source, setSource] = useState("");
@@ -39,13 +40,14 @@ export default function Media() {
         <div
           className={
             fadeIn
-              ? "flex justify-center items-center animate__animated animate__fadeInLeft"
+              ? "flex justify-center items-center animate__animated animate__fadeInLeft "
               : "flex justify-center items-center animate__animated animate__fadeInRight"
           }
         >
-          <BackButton route={"media"} />
           <Gallery images={source} />
           <AboutComponent />
+          <Socials />
+          <BackButton route={"media"} />
         </div>
       )}
     </>

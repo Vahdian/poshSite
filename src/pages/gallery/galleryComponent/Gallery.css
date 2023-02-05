@@ -11,5 +11,9 @@
     width: 1104px;
     overflow: hidden;
     scroll-behavior: smooth;
-    
+    }
+
+.darken{
+    filter: brightness(50%
+    );
 }

@@ -14,41 +14,41 @@ height: 300px;
 }
 
 .card1{
-    background-image: url("../../assets/coding3.jpg");
+    background-image: url("../../../assets/coding3.jpg");
 }
 
 .card2{
-    background-image: url("../../assets/art2.jpg");
+    background-image: url("../../../assets/art2.jpg");
     
 }
 
 .card3{
-    background-image: url("../../assets/music.jpg");
+    background-image: url("../../../assets/music.jpg");
 }
 
 .card4{
-    background-image: url("../../assets/photo.JPG");
+    background-image: url("../../../assets/photo.JPG");
 }
 
 
 .photography1{
-    background-image: url("../../assets/photo2.JPG");
+    background-image: url("../../../assets/photo2.JPG");
 }
 
 .cardcode1{
-    background-image: url("../../assets/cards/design.png");
+    background-image: url("../../../assets/cards/design.png");
 }
 
 .cardcode2{
-    background-image: url("../../assets/cards/webmob3.png");
+    background-image: url("../../../assets/cards/webmob3.png");
 }
 
 .cardcode3{
-    background-image: url("../../assets/cards/webs.png");
+    background-image: url("../../../assets/cards/webs.png");
 }
 
 .cardmusic{
-    background-image: url("../../assets/cards/heart.png");
+    background-image: url("../../../assets/cards/heart.png");
     animation: beat 2s infinite alternate;
 	transform-origin: center;
 }

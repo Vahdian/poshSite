@@ -2,14 +2,14 @@ import React from "react";
 import CV from "../../assets/cv.png";
 import Instagram from "../../assets/instagram.svg";
 import LinkedIn from "../../assets/linkedin.svg";
-import "../../pages/landingPage/landingPage.css";
+import "../../pages/landingPage/LandingPageComponent/landingPageComponent.css";
 import useWindowSize from "../../hooks/useWindowSize";
 
 export default function Socials() {
   const width = useWindowSize();
   const soul = require("../../assets/soul.png");
   return (
-    <div className="absolute sm:left-0 top-0 sm:top-auto space-x-8 sm:space-x-0 text-black mt-6 sm:mt-0 cursor-pointer flex sm:flex-col justify-center items-center sm:h-screen w-full sm:w-auto sm:ml-6 z-20">
+    <div className="fixed sm:left-0 top-0 sm:top-auto space-x-8 sm:space-x-0 text-black mt-6 sm:mt-0 cursor-pointer flex sm:flex-col justify-center items-center sm:h-screen w-screen sm:w-auto sm:ml-6 z-20">
       {width < 900 && <img className="mb-4 text-sm w-32 " src={soul} alt="" />}
       <a
         href="https://www.instagram.com/soulofkumami"

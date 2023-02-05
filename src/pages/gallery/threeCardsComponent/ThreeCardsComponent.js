@@ -7,6 +7,7 @@ import Socials from "../../../components/socialsComponent/Socials";
 import XComponent from "../../../components/xComponent/XComponent";
 import "../galleryComponent/Gallery.css";
 import "animate.css";
+import useWindowSize from "../../../hooks/useWindowSize.js";
 
 export default function ThreeCardsComponent() {
   const [showTitle, setShowTitle] = useState(false);
@@ -15,6 +16,8 @@ export default function ThreeCardsComponent() {
   const [fadeIn, setFadeIn] = useState(false);
 
   const photos = require("../ImageSets.json").imageCategories;
+
+  const width = useWindowSize();
 
   const showThisTitle = (title, e) => {
     setShowTitle(true);
@@ -45,19 +48,24 @@ export default function ThreeCardsComponent() {
         {photos.map((photo, i) => (
           <Link to={photo.nav}>
             <div
-              className="enlarge relative"
+              className="enlarge relative flex justify-center"
               key={i}
               onMouseOver={() => showThisTitle(photo.title, i)}
               onMouseOut={() => dontShowThisTitle(photo.title, i)}
             >
               <img
                 src={photo.link}
-                className="imageGallery  clickable"
+                className="imageGallery clickable darken "
                 alt={i}
               />
               {showTitle && i === key && (
                 <div className="absolute right-0 left-0 bottom-0 text-center text-6xl text-white font-bold">
                   {title}
+                </div>
+              )}
+              {width < 900 && (
+                <div className="rotate-[270deg] text-white absolute top-36 font-bold text-5xl">
+                  {photo.title}
                 </div>
               )}
             </div>
