@@ -115,15 +115,22 @@ export default function LandingPageComponent({ reset, setNavigate }) {
               onMouseOver={() => showCodeTitle(true)}
               onMouseOut={() => showCodeTitle(false)}
             >
-              {codeTitle ||
-                (width < 900 && (
-                  <div
-                    className="text-7xl"
-                    onMouseOver={() => showCodeTitle(true)}
-                  >
-                    CODE
-                  </div>
-                ))}
+              {codeTitle && (
+                <div
+                  className="text-7xl"
+                  onMouseOver={() => showCodeTitle(true)}
+                >
+                  CODE
+                </div>
+              )}
+              {width < 900 && (
+                <div
+                  className="text-7xl"
+                  onMouseOver={() => showCodeTitle(true)}
+                >
+                  CODE
+                </div>
+              )}
             </div>
           )}
           {codeSelected && (
@@ -143,15 +150,22 @@ export default function LandingPageComponent({ reset, setNavigate }) {
               onMouseOver={() => showArtTitle(true)}
               onMouseOut={() => showArtTitle(false)}
             >
-              {artTitle ||
-                (width < 900 && (
-                  <div
-                    className="text-7xl"
-                    onMouseOver={() => showArtTitle(true)}
-                  >
-                    ART
-                  </div>
-                ))}
+              {artTitle && (
+                <div
+                  className="text-7xl"
+                  onMouseOver={() => showArtTitle(true)}
+                >
+                  ART
+                </div>
+              )}
+              {width < 900 && (
+                <div
+                  className="text-7xl"
+                  onMouseOver={() => showArtTitle(true)}
+                >
+                  ART
+                </div>
+              )}
             </div>
           )}
           {artSelected && (
@@ -174,15 +188,23 @@ export default function LandingPageComponent({ reset, setNavigate }) {
               onMouseOver={() => showMusicTitle(true)}
               onMouseOut={() => showMusicTitle(false)}
             >
-              {musicTitle ||
-                (width < 900 && (
-                  <div
-                    className="text-7xl"
-                    onMouseOver={() => showMusicTitle(true)}
-                  >
-                    MUSIC
-                  </div>
-                ))}
+              {musicTitle && (
+                <div
+                  className="text-7xl"
+                  onMouseOver={() => showMusicTitle(true)}
+                >
+                  MUSIC
+                </div>
+              )}
+              ||
+              {width < 900 && (
+                <div
+                  className="text-7xl"
+                  onMouseOver={() => showMusicTitle(true)}
+                >
+                  MUSIC
+                </div>
+              )}
             </div>
           )}
           {musicSelected && (
@@ -206,14 +228,14 @@ export default function LandingPageComponent({ reset, setNavigate }) {
                   <img src={Spotify} alt="" className="h-6" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/germanpalero/"
+                  href="https://www.soundcloud.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src={Soundcloud} alt="" className="h-6" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/germanpalero/"
+                  href="https://www.youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -224,10 +246,10 @@ export default function LandingPageComponent({ reset, setNavigate }) {
           )}
 
           {codeSelected && (
-            <div className="relative bg-pink-500 card w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
+            <div className="relative card w-1/2 h-1/2 flex justify-center items-center text-white text-xl">
               <div className="absolute clickable">
                 <a
-                  href="germanpalero.netlify.com"
+                  href="https://germanpalero.netlify.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -245,15 +267,22 @@ export default function LandingPageComponent({ reset, setNavigate }) {
                 onMouseOver={() => showMediaTitle(true)}
                 onMouseOut={() => showMediaTitle(false)}
               >
-                {mediaTitle ||
-                  (width < 900 && (
-                    <div
-                      className="text-4xl text-center"
-                      onMouseOver={() => showMediaTitle(true)}
-                    >
-                      VIDEO & PHOTOGRAPHY
-                    </div>
-                  ))}
+                {mediaTitle && (
+                  <div
+                    className="text-4xl text-center"
+                    onMouseOver={() => showMediaTitle(true)}
+                  >
+                    VIDEO & PHOTOGRAPHY
+                  </div>
+                )}
+                {width < 900 && (
+                  <div
+                    className="text-4xl text-center"
+                    onMouseOver={() => showMediaTitle(true)}
+                  >
+                    VIDEO & PHOTOGRAPHY
+                  </div>
+                )}
               </div>
             </Link>
           )}

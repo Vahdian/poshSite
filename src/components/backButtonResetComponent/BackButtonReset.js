@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import back from "../../assets/back.png";
 import useWindowSize from "../../hooks/useWindowSize";
 import x from "../../assets/x.png";
 
-
-export default function BackButton({ route, onClick }) {
+export default function BackButtonReset({ onClick }) {
   const width = useWindowSize();
   return (
     <>
@@ -14,18 +12,14 @@ export default function BackButton({ route, onClick }) {
           className="absolute top-0 left-0 ml-2 mt-2 text-4xl clickable z-20"
           onClick={onClick}
         >
-          <Link to={`/${route}`}>
-            <img src={back} alt="" />
-          </Link>
+          <img src={back} alt="" />
         </div>
       ) : (
         <div
-          className="fixed bottom-0 ml-2 mt-2 mb-2 text-sm clickable z-2 bottom-back"
+          className="fixed bottom-0 mt-2 mb-2 text-sm clickable z-2 bottom-back"
           onClick={onClick}
         >
-          <Link to={`/${route}`}>
-            <img src={x} alt="" className="w-8" />
-          </Link>
+          <img src={x} alt="" className="w-8" />
         </div>
       )}
     </>

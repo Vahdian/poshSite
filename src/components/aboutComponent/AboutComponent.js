@@ -10,8 +10,6 @@ import useWindowSize from "../../hooks/useWindowSize";
 export default function AboutComponent({ nav }) {
   const [aboutMe, setAboutMe] = useState(false);
   const width = useWindowSize();
-  const icons = stackIcons;
-  console.log(icons);
 
   const extendAboutMe = () => {
     setAboutMe(true);
@@ -22,7 +20,6 @@ export default function AboutComponent({ nav }) {
   useEffect(() => {
     if (nav) {
       setAboutMe(false);
-      console.log("HIDE");
     }
   }, [nav]);
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
-import BackButton from "../../components/backButtonComponent/BackButton";
+import BackButtonReset from "../../components/backButtonResetComponent/BackButtonReset";
 import Socials from "../../components/socialsComponent/Socials";
 import LandingPageComponent from "./LandingPageComponent/LandingPageComponent";
 
@@ -9,16 +9,20 @@ export default function LandingPage() {
   const [reset, setReset] = useState(false);
 
   const activateReset = () => {
-    setReset(!reset);
     console.log(reset);
+    setReset(!reset);
   };
 
   return (
-    <div className="flex justify-center items-center">
-      {navigate && <BackButton route={"/"} onClick={activateReset} />}
+    <div className="flex justify-center items-center flex-col">
       <Socials />
       <LandingPageComponent reset={reset} setNavigate={setNavigate} />
       <AboutComponent nav={navigate} />
+      {navigate && (
+        <div onClick={activateReset}>
+          <BackButtonReset />
+        </div>
+      )}
     </div>
   );
 }
