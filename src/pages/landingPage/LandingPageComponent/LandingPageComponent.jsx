@@ -32,6 +32,10 @@ export default function LandingPageComponent({ reset, setNavigate }) {
     setArtSelected(false);
     setPhotographySelected(false);
     setNavigate(false);
+    setMusicTitle(false);
+    setCodeTitle(false);
+    setMediaTitle(false);
+    setArtTitle(false);
   };
   const selectCode = () => {
     setCodeSelected(true);
